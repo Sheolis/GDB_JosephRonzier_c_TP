@@ -12,12 +12,14 @@ typedef struct destinations destinations_s;
 typedef struct lieu lieu_s;
 typedef struct joueur joueur_s;
 
+void add_destination(destinations_s *destinations, lieu_s *lieu);
 
 enum ouinon {OUI=1, NON=0};
 
 struct destinations
 {
-  lieu_s *liste_lieux;
+  int size;
+  lieu_s **liste_lieux;
 };
 
 struct lieu
@@ -31,8 +33,8 @@ struct lieu
 
 struct joueur_s
 {
-  unsigned endurance;
+  int endurance;
   lieu_s *position;
-}
+};
 
 #endif
