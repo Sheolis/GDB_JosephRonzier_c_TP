@@ -13,6 +13,9 @@ typedef struct lieu lieu_s;
 typedef struct joueur joueur_s;
 
 void add_destination(destinations_s *destinations, lieu_s *lieu);
+void voyage(joueur_s *joueur);
+void aff_lieux_proches(lieu_s *position);
+void choix_destination(lieu_s *position);
 
 enum ouinon {OUI=1, NON=0};
 
@@ -31,9 +34,10 @@ struct lieu
   ouinon_e avant_poste;
 };
 
-struct joueur_s
+struct joueur
 {
   int endurance;
+  int endurance_max;
   lieu_s *position;
 };
 
