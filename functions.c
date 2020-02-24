@@ -25,7 +25,7 @@ void choix_destination(lieu_s *position)
   char choix[200];
   int a;
   printf("Ou aller ?\n");
-  scanf("%[^\n]", &choix);
+  scanf("%[^\n]s", choix);
 
   for (int i=0; i<position->lieux_proches.size; i++)
   {
