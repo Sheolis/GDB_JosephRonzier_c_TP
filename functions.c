@@ -36,8 +36,45 @@ lieu_s* choix_destination(lieu_s* position)
           return position;
       }
   }
-  printf("Cette destination est indisponnible\n");
+  printf("Cette destination est indisponible\n");
   return position;
+}
+
+void repos(joueur_s* joueur){
+  char choix[200];
+  while (1) {
+    scanf("%[^\n]s", choix);
+    if(strcmp(choix,"oui")==0){
+      joueur->endurance += 20;
+      if (joueur->endurance>joueur->endurance_max) { joueur->endurance = joueur->endurance_max; }
+      printf("Endurance : %d\n", joueur->endurance);
+      vide_buff();
+      return ;
+    }else if (strcmp(choix,"non")!=0) {
+      printf("oui/non\n");
+    }else {
+      vide_buff();
+      return;
+    }
+  vide_buff();
+  }
+}
+
+void avant_poste(lieu_s* lieu){
+  char choix[200];
+  while (1) {
+    scanf("%[^\n]s", choix);
+    if(strcmp(choix,"oui")==0){
+      lieu->avant_poste = 1;
+      lieu->diff = lieu->diff/2;
+      return ;
+    }else if (strcmp(choix,"non")!=0) {
+      printf("oui/non");
+    }else {
+      return;
+    }
+  vide_buff();
+  }
 }
 
 void vide_buff(void)

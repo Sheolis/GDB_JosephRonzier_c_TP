@@ -12,6 +12,8 @@ typedef struct destinations destinations_s;
 typedef struct lieu lieu_s;
 typedef struct joueur joueur_s;
 
+void repos(joueur_s* joueur);
+void avant_poste(lieu_s* lieu);
 void add_destination(destinations_s *destinations, lieu_s *lieu);
 void voyage(joueur_s *joueur);
 void aff_lieux_proches(lieu_s *position);

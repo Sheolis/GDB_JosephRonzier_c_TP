@@ -22,6 +22,14 @@ int main()
 
   printf("%s\n",plaines.lieux_proches.liste_lieux[plaines.lieux_proches.size-1]->nom);
 while (joueur.position->nom != "Ville d'Eckaterea") {
+  if (joueur.endurance < joueur.endurance_max && (joueur.position->diff < 5 || joueur.position->avant_poste == OUI)) {
+    printf("voulez vous vous reposer ? (oui/non)\n");
+    repos(&joueur);
+    }
+  if (joueur.position->diff > 10 && joueur.position->avant_poste == NON) {
+    printf("Voulez vous construire un avant-poste ? (oui/non)\n");
+    avant_poste(joueur.position);
+  }
   voyage(&joueur);
 }
   return 0;
