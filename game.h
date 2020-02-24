@@ -16,19 +16,20 @@ void add_destination(destinations_s *destinations, lieu_s *lieu);
 void voyage(joueur_s *joueur);
 void aff_lieux_proches(lieu_s *position);
 lieu_s* choix_destination(lieu_s *position);
+void vide_buff(void);
 
 enum ouinon {OUI=1, NON=0};
 
 struct destinations
 {
   int size;
-  lieu_s **liste_lieux;
+  lieu_s** liste_lieux;
 };
 
 struct lieu
 {
-  char *nom;
-  char *description;
+  char* nom;
+  char* description;
   int diff;
   destinations_s lieux_proches;
   ouinon_e avant_poste;
@@ -38,7 +39,7 @@ struct joueur
 {
   int endurance;
   int endurance_max;
-  lieu_s *position;
+  lieu_s* position;
 };
 
 #endif

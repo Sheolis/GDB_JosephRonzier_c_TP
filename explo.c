@@ -21,8 +21,8 @@ int main()
   joueur_s joueur={100, 100, &village};
 
   printf("%s\n",plaines.lieux_proches.liste_lieux[plaines.lieux_proches.size-1]->nom);
-
+while (joueur.position->nom != "Ville d'Eckaterea") {
   voyage(&joueur);
-
+}
   return 0;
 }

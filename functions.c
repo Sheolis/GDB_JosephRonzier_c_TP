@@ -12,12 +12,11 @@ void voyage(joueur_s *joueur)
     aff_lieux_proches(joueur->position);
     printf("Endurance : %d\n", joueur->endurance);
     char* position_tmp = joueur->position->nom;
-    printf("%s\n", joueur->position->nom);
     while (strcmp(position_tmp,joueur->position->nom)==0)
     {
       joueur->position = choix_destination(joueur->position);
+      vide_buff();
     }
-    printf("%s\n", joueur->position->nom);
 }
 
 lieu_s* choix_destination(lieu_s* position)
@@ -38,4 +37,10 @@ lieu_s* choix_destination(lieu_s* position)
   }
   printf("Cette destination est indisponnible\n");
   return position;
+}
+
+void vide_buff(void)
+{
+  int c;
+  while ((c = getchar()) != '\n' && c != EOF) { }
 }
