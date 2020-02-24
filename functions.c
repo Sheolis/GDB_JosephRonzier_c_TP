@@ -17,6 +17,7 @@ void voyage(joueur_s *joueur)
       joueur->position = choix_destination(joueur->position);
       vide_buff();
     }
+    joueur->endurance -= joueur->position->diff;
 }
 
 lieu_s* choix_destination(lieu_s* position)
